@@ -1,5 +1,7 @@
 # Challenge-2-Backend-Predict-next-3-values-of-Stock-price-timeseries-data
 
+## Application
+
 This is a Python application that can select CSV files from folders, create a new data frame according to the instructions provided, and output a CSV file with the modifications. 
 I decided to follow the algorithm provided but I modified the way you input information, changing it from being able to input only the values 1 or 2 to being able to write the name of the deal you want without the extension (".csv"). I accomplished that by first looking for all the files that contain the extension and then storing them in a dictionary in lowercase so no later problems should appear when the user tries to type the deal when prompted (this was made redundant when the user is prompted for the deal), secondly after the user inputs the deal name the "pandas" functionality comes when the function reads the CSV file, knowing it has no header it adds the 3 headers and another function that transforms the time that is a string under a "datetime" and also formatting accordingly.
 The first defined function is the one that selects the sample by firstly setting a range starting from 0 and having a maximum of "the length of the data frame - 10" because for example if the data frame contains 100 points it shouldn't be able to pick the random one to be the point 99 because there would be no 10 consecutive points to enumerate. This function returns the 10 points necessary for the prediction.
